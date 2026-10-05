@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "title": "Aether Caribbean - starting geography",
+    "author": "Aether project",
+    "mapStyle": "stylized_2.5d",
+    "scaleHint": "1 unit ~= 1 nautical mile for world-space readability",
+    "notes": "Placeholder geography for the good-looking-world milestone. Shapes are inspired by the real Caribbean; names are fictionalized for the game world."
+  },
+  "bounds": {
+    "min": { "x": -1200, "y": -800 },
+    "max": { "x": 1200, "y": 800 }
+  },
+  "regions": [
+    {
+      "id": "west_cuestas",
+      "name": "Las Cuestas",
+      "anchorTown": "Puerto Vela",
+      "terrain": ["coastal_hull", "hills", "harbors"],
+      "goodsHint": ["cattle", "hides", "amber", "small arms"],
+      "nationId": "cuestas"
+    },
+    {
+      "id": "gulf_tangle",
+      "name": "The Tangle",
+      "anchorTown": "Mar de Hueso",
+      "terrain": ["mangrove_coast", "reefs", "shallow_lagoons"],
+      "goodsHint": ["timber", "dyes", "salt", "contraband_staging"],
+      "nationId": "tangle"
+    },
+    {
+      "id": "sapphire_bank",
+      "name": "Sapphire Bank",
+      "anchorTown": "Veranillo",
+      "terrain": ["trade_islands", "deep_channel", "fortified_harbor"],
+      "goodsHint": ["sugar", "coffee", "glass", "silver"],
+      "nationId": "sapphire"
+    },
+    {
+      "id": "windward_reach",
+      "name": "Windward Reach",
+      "anchorTown": "Altoba",
+      "terrain": ["mountain_island", "harbor", "quarry"],
+      "goodsHint": ["stone", "iron", "wine", "textiles"],
+      "nationId": "reach"
+    },
+    {
+      "id": "leeward_hermit",
+      "name": "Leeward Hermit",
+      "anchorTown": "Cayo Sombra",
+      "terrain": ["hidden_coves", "small_village", "shipyards"],
+      "goodsHint": ["salt", "tar", "weapons", "illegal_repair"],
+      "nationId": "hermit"
+    }
+  ],
+  "nations": [
+    {
+      "id": "cuestas",
+      "name": "Crown of Cuestas",
+      "type": "historical_style",
+      "stance": "colonial_mercantile"
+    },
+    {
+      "id": "tangle",
+      "name": "Huese Dominion",
+      "type": "historical_style",
+      "stance": "coastal_defensive"
+    },
+    {
+      "id": "sapphire",
+      "name": "Sapphire Company",
+      "type": "historical_style",
+      "stance": "trade_monopoly"
+    },
+    {
+      "id": "reach",
+      "name": "Reach Compact",
+      "type": "historical_style",
+      "stance": "militia_town_network"
+    },
+    {
+      "id": "hermit",
+      "name": "Leeward Compact",
+      "type": "custom",
+      "stance": "independent_port_network"
+    }
+  ],
+  "pirate_factions": [
+    {
+      "id": "crimson_tide",
+      "name": "Crimson Tide",
+      "baseRegionId": "gulf_tangle",
+      "notes": "Hit-and-run convoy raiders"
+    },
+    {
+      "id": "iron_tide",
+      "name": "Iron Tide",
+      "baseRegionId": "west_cuestas",
+      "notes": "Heavier ships, siege-minded"
+    },
+    {
+      "id": "sable_clique",
+      "name": "Sable Clique",
+      "baseRegionId": "leeward_hermit",
+      "notes": "Smuggling links, covert ports"
+    },
+    {
+      "id": "green_water_brethren",
+      "name": "Greenwater Brethren",
+      "baseRegionId": "sapphire_bank",
+      "notes": "Island-hopping free sailors"
+    },
+    {
+      "id": "salt_kings",
+      "name": "Salt Kings",
+      "baseRegionId": "windward_reach",
+      "notes": "Coastal strongmen, tribute runners"
+    }
+  ],
+  "smuggling_faction": {
+    "id": "gray_buoy",
+    "name": "Gray Buoy",
+    "baseRegionId": "leeward_hermit",
+    "notes": "Cross-factional black market, illegal goods, covert shuttles"
+  },
+  "settlements": [
+    { "id": "puerto_vela", "regionId": "west_cuestas", "type": "port_town" },
+    { "id": "mar_de_hueso", "regionId": "gulf_tangle", "type": "port_town" },
+    { "id": "veranillo", "regionId": "sapphire_bank", "type": "trade_hub" },
+    { "id": "altoba", "regionId": "windward_reach", "type": "fort_town" },
+    { "id": "cayo_sombra", "regionId": "leeward_hermit", "type": "hidden_port" }
+  ],
+  "nav_points": [
+    { "id": "channel_veranillo", "regionIds": ["sapphire_bank"], "hazard": "heavy_traffic" },
+    { "id": "reef_mar_de_hueso", "regionIds": ["gulf_tangle"], "hazard": "shallows" },
+    { "id": "pass_cuestas", "regionIds": ["west_cuestas", "gulf_tangle"], "hazard": "narrow" },
+    { "id": "deep_reach", "regionIds": ["windward_reach"], "hazard": "storm_prone" }
+  ],
+  "hazards": [
+    { "type": "reef", "regions": ["gulf_tangle"] },
+    { "type": "shallow_lagoon", "regions": ["gulf_tangle"] },
+    { "type": "storm_belt", "regions": ["windward_reach", "leeward_hermit"] },
+    { "type": "naval_patrol", "regions": ["sapphire_bank", "west_cuestas"] }
+  ]
+}
